@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 app.use('/uploads', express.static('uploads'));
-app.use(express.urlencoded({ extended : false }));
+app.use(express.urlencoded({ extended : true }));
 
 const logger = (req, res, next) => {
 
@@ -48,10 +48,10 @@ const authenticateToken = (req, res, next) => {
 
 const connection = mysql.createConnection({
 
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "mdrrmo_app"
+    host: "bwagiespl6cksyxkb0cl-mysql.services.clever-cloud.com",
+    user: "ukappnwqyfpzc25w",
+    password: "RdAvVrSTVYvYWkHmZ1ji",
+    database: "bwagiespl6cksyxkb0cl"
 
 });
 
@@ -305,5 +305,6 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
 
     console.log(`Server is running at port ${PORT}`);
+
 
 })
